@@ -1,7 +1,11 @@
 ﻿#include <iostream>
+#include "utils.hpp"
+
+using namespace millionaire;
 
 int main()
 {
-	std::cout << "Hello CMake.\n";
+	print_green("siema");
+
 	return 0;
 }

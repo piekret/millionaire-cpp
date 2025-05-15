@@ -15,7 +15,7 @@ endif()
 # ── źródła ───────────────────────────────────────────
 file(GLOB_RECURSE SRC CONFIGURE_DEPENDS "src/*.cpp")
 
-add_executable(millionaire ${SRC})
+add_executable(millionaire ${SRC} "src/utils.cpp")
 
 target_include_directories(millionaire
     PUBLIC

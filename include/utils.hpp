@@ -12,11 +12,11 @@ namespace millionaire {
 		std::string nick;
 	};
 
-	std::vector<Question> load_questions(const std::string& path);
 	Question parse_csv_row(const std::string& row, level level);
+	std::vector<Question> load_questions(const std::string& path);
 
 	void print_green(const std::string& s);
 	void print_red(const std::string& s);
-	CmdArgs compile_args(int argc, char** argv);
+	CmdArgs parse_args(int argc, char** argv);
 
 }	

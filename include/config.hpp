@@ -13,6 +13,6 @@ namespace millionaire {
 		250000,500000,1000000,2000000,5000000,10000000
 	};
 
-	const std::string default_question = "assets/default_questions.csv";
+	const std::string default_questions = "assets/default_questions.csv";
 
 }
