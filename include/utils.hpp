@@ -12,12 +12,19 @@ namespace millionaire {
 		std::string nick;
 	};
 
+	struct Score {
+		std::string nick;
+		double cash;
+	};
+
 	Question parse_csv_row(const std::string& row, level level);
 	std::vector<Question> load_questions(const std::string& path);
 
 	void print_green(const std::string& s);
 	void print_red(const std::string& s);
+	void clear();
 	CmdArgs parse_args(int argc, char** argv);
 
+	void sort_scores(std::vector<Score>& scores);
 
 }	

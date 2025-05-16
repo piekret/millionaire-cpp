@@ -52,6 +52,11 @@ void millionaire::print_red(const std::string& s)
     std::cout << "\x1B[32m" << s << "\x1B[0m" << "\n";
 }
 
+void millionaire::clear()
+{
+    std::cout << "\x1B[2J\x1B[H" << "\n";
+}
+
 millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
 {
     CmdArgs args;
@@ -73,4 +78,23 @@ millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
         args.questions_path = default_questions;
 
     return args;
+}
+
+void millionaire::sort_scores(std::vector<Score>& scores)
+{
+    bool swapped;
+    int n = scores.size();
+
+    do {
+        swapped = false;
+        
+        for (int i = 1; i < n; i++) {
+            if (scores[i - 1].cash < scores[i].cash) {
+                std::swap(scores[i - 1], scores[i]);
+                swapped = true;
+            }
+        }
+
+        n--;
+    } while (swapped);
 }
