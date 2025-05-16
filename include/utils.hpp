@@ -19,4 +19,5 @@ namespace millionaire {
 	void print_red(const std::string& s);
 	CmdArgs parse_args(int argc, char** argv);
 
+
 }	
