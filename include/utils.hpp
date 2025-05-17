@@ -10,6 +10,7 @@ namespace millionaire {
 		std::string questions_path;
 		bool shuffle;
 		std::string nick;
+		bool help;
 	};
 
 	struct Score {

@@ -5,13 +5,30 @@
 #include <algorithm>
 #include <iostream>
 
+const std::string man = R"(
+Usage:
+  millionaire [options]
+
+Options:
+  -help               Show this help message and exit.
+  -questions=<file>   Path to the questions file.
+                      Default: "default_questions".
+  -shuffle=false      Do not shuffle questions (shuffling is ON by default).
+  -nick=<name>        Set the player's nickname (default: "player").
+
+Examples:
+  millionaire -questions=trivia.txt -nick=Alice
+  millionaire -shuffle=false
+)";
+
+
 millionaire::Game::Game(v_question questions, const CmdArgs& args) 
 	: questions(questions), args(args)
 {
 	if (args.shuffle) {
 		std::random_device seed;
 		std::mt19937 gen(seed());
-		std::shuffle(questions.begin(), questions.end(), gen);
+		std::shuffle(this->questions.begin(), this->questions.end(), gen);
 	}
 }
 
@@ -28,16 +45,23 @@ void millionaire::Game::show_scores(double reward)
 	save_scores(scores, args.questions_path + ".scores");
 
 	std::cout << "\nHigh Scores:" << "\n";
-	for (int i = 0; i < scores.size(); ++i)
+	for (int i = 0; i < scores.size(); i++)
 		std::cout << (i + 1) << ". " << scores[i].nick << " - $" << scores[i].cash << "\n";
 }
 
 void millionaire::Game::run()
 {
+	if (this->args.help) {
+		std::cout << man << "\n";
+		return;
+	}
+
 	print_banner();
-	std::cout << "Commands: A-D answer, H=50/50, U=Audience, P=Phone, Q=Exit\n\n";
+	std::cout << "Commands: A-D answer, H=50/50, U=Audience, P=Phone, Q=Exit\n";
+	std::cout << "run .\\millionaire.exe -help for more commands\n\n";
 
 	int level = 0;
+	double reward;
 
 	while (level < num_of_questions) {
 		const Question& question = questions[level];
@@ -46,7 +70,7 @@ void millionaire::Game::run()
 		std::cout << question.text << "\n";
 
 		for (int i = 0; i < 4; i++) {
-			char label = 'A' + i;
+			char label = 'A' + static_cast<char>(i);
 			std::string ans = question.answers[i].empty() ? "---" : question.answers[i];
 
 			std::cout << label << ") " << ans << "  ";
@@ -60,7 +84,7 @@ void millionaire::Game::run()
 		switch (choice) {
 		case 'H':
 			if (!used50) {
-				fifty_fifty(const_cast<Question&>(question)); // prosze przymkn¹æ oko ;(
+				fifty_fifty(const_cast<Question&>(question)); // prosze przymknac oko ;(
 				used50 = true;
 				continue;
 			} 
@@ -86,19 +110,19 @@ void millionaire::Game::run()
 			continue;
 
 		case 'Q':
-			double reward = level > 0 ? rewards[level - 1] : 0.0;
+			reward = level > 0 ? rewards[level - 1] : 0.0;
 			std::cout << "You quit with $" << reward << std::endl;
 			show_scores(reward);
-			break;
+			return;
 
 		case 'A': case 'B': case 'C': case 'D':
 			if (!question.isCorrect(choice)) {
 				print_red("Wrong!");
 				std::cout << "Correct was: " << question.correct << std::endl;
 
-				double reward = level > 0 ? rewards[level - 1] : 0.0;
+				reward = level > 0 ? rewards[level - 1] : 0.0;
 				show_scores(reward);
-				break;
+				return;
 			}
 
 			print_green("Correct!");
@@ -113,5 +137,6 @@ void millionaire::Game::run()
 
 	}
 
-	std::cout << "CONGRATS! You won $" << rewards[num_of_questions] << "\n";
+	std::cout << "CONGRATS! You won $" << rewards[num_of_questions - 1] << "\n";
+	show_scores(rewards[num_of_questions - 1]);
 }

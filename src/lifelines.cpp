@@ -15,7 +15,7 @@ void millionaire::fifty_fifty(Question& question)
 	char keep = options[roll(gen)];
 
 	for (int i = 0; i < 4; i++) {
-		char label = 'A' + i;
+		char label = 'A' + static_cast<char>(i);
 
 		if (label != question.correct && label != keep)
 			question.answers[i].clear();

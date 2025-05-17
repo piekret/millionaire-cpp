@@ -33,8 +33,9 @@ millionaire::Question millionaire::parse_csv_row(const std::string& row)
 millionaire::v_question millionaire::load_questions(const std::string& path)
 {
     std::ifstream in(path);
-    if (!in) 
+    if (!in)
         throw std::runtime_error("Cannot open file");
+        
 
     v_question out;
     std::string line;
@@ -57,7 +58,7 @@ void millionaire::print_green(const std::string& s)
 
 void millionaire::print_red(const std::string& s)
 {
-    std::cout << "\x1B[32m" << s << "\x1B[0m" << "\n";
+    std::cout << "\x1B[31m" << s << "\x1B[0m" << "\n";
 }
 
 void millionaire::clear()
@@ -79,16 +80,19 @@ void millionaire::print_banner()
 millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
 {
     CmdArgs args;
-    args.shuffle = false;
+    args.shuffle = true;
     args.nick = "player";
+    args.help = false;
 
     for (int i = 1; i < argc; i++) {
         std::string a = argv[i];
 
-        if (a.find("-questions=") == 0)
+        if (a == "-help")
+            args.help = true;
+        else if (a.find("-questions=") == 0)
             args.questions_path = a.substr(11);
-        else if (a == "-shuffle")
-            args.shuffle = true;
+        else if (a == "-shuffle=false")
+            args.shuffle = false;
         else if (a.find("-nick=") == 0)
             args.nick = a.substr(6);
     }
@@ -110,7 +114,6 @@ millionaire::v_score millionaire::load_scores(const std::string& path)
 
     v_score out;
     std::string line;
-    int level = 0;
 
     while (std::getline(in, line)) {
         if (line.empty())
@@ -147,7 +150,7 @@ void millionaire::save_scores(const v_score& scores, const std::string& path)
 void millionaire::sort_scores(v_score& scores)
 {
     bool swapped;
-    int n = scores.size();
+    size_t n = scores.size();
 
     do {
         swapped = false;

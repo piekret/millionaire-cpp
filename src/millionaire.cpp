@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <clocale>
 #include "utils.hpp"
 #include "game.hpp"
 
@@ -6,6 +7,8 @@ using namespace millionaire;
 
 int main(int argc, char** argv)
 {
+	std::setlocale(LC_ALL, "");
+
 	try {
 		CmdArgs args = parse_args(argc, argv);
 		v_question questions = load_questions(args.questions_path);
