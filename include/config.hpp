@@ -5,7 +5,6 @@
 
 namespace millionaire {
 
-	typedef unsigned int level;
 	const short num_of_questions = 15;
 
 	const double reward[num_of_questions] = {

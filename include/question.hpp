@@ -9,8 +9,7 @@ namespace millionaire {
 		std::string text;
 		std::string answers[4];
 		char correct;
-		level level;
-		bool isCorrect(char a) const;
+		bool isCorrect(char a) const { return a == correct; };
 	};
 
 }

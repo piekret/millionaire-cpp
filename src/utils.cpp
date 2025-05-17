@@ -3,22 +3,30 @@
 #include <sstream>
 #include <iostream>
 
-millionaire::Question millionaire::parse_csv_row(const std::string& row, level level)  
+millionaire::Question millionaire::parse_csv_row(const std::string& row)  
 {  
+    std::vector<std::string> tokens;
+    std::string field;
     std::stringstream ss;
+
     ss << row;
+    while (std::getline(ss, field, ';'))
+        tokens.push_back(field);
+
+    if (tokens.size() != 6)
+        throw std::runtime_error("invalid csv row: expected 6 fields, got " + std::to_string(tokens.size()));
 
     Question question;
-    question.level = level;
+    question.text = tokens[0];
 
     for (int i = 0; i < 4; i++)
-        std::getline(ss, question.answers[i], ';');
+        question.answers[i] = tokens[i + 1];
 
-    std::string letter;
-    std::getline(ss, letter, ';');
+    const std::string corr = tokens[5];
+    if (corr.size() != 1 || corr[0] < 'A' || corr[0] > 'D')
+        throw std::runtime_error("invalid correct answer: expected A-D");
 
-    question.correct = letter.empty() ? 'A' : letter[0];
-
+    question.correct = corr[0];
     return question;
 }
 
@@ -35,7 +43,7 @@ std::vector<millionaire::Question> millionaire::load_questions(const std::string
     while (std::getline(in, line)) {
         if (line.empty()) continue;
 
-        out.push_back(parse_csv_row(line, level));
+        out.push_back(parse_csv_row(line));
         level++;
     }
 
@@ -78,6 +86,49 @@ millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
         args.questions_path = default_questions;
 
     return args;
+}
+
+std::vector<millionaire::Score> millionaire::load_scores(const std::string& path)
+{
+    std::ifstream in(path);
+
+    if (!in)
+        throw std::runtime_error("cannot open file");
+
+    std::vector<Score> out;
+    std::string line;
+    int level = 0;
+
+    while (std::getline(in, line)) {
+        if (line.empty())
+            continue;
+
+        std::stringstream ss;
+        ss << line;
+
+        Score s;
+        std::string amt;
+
+        std::getline(ss, s.nick, ';');
+        std::getline(ss, amt, ';');
+
+        try {
+            s.cash = std::stod(amt);
+        }
+        catch (...) {
+            s.cash = 0;
+        }
+    }
+
+    return out;
+}
+
+void millionaire::save_scores(const std::vector<Score>& scores, const std::string& path)
+{
+    std::ofstream out(path);
+
+    for (auto& s : scores)
+        out << s.nick << ";" << s.cash << "\n";
 }
 
 void millionaire::sort_scores(std::vector<Score>& scores)
