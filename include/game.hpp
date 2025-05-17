@@ -13,6 +13,9 @@ namespace millionaire {
 	private:
 		v_question questions;
 		CmdArgs args;
+		bool used50{ false }, used_audience{ false }, used_phone{ false };
+
+		void show_scores(double reward);
 	};
 
 }

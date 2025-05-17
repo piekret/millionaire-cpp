@@ -65,6 +65,17 @@ void millionaire::clear()
     std::cout << "\x1B[2J\x1B[H" << "\n";
 }
 
+void millionaire::print_banner()
+{
+    std::ifstream in(banner_file);
+    if (!in)
+        return;
+
+    std::string line;
+    while (std::getline(in, line))
+        std::cout << line << "\n";
+}
+
 millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
 {
     CmdArgs args;
@@ -92,8 +103,10 @@ millionaire::v_score millionaire::load_scores(const std::string& path)
 {
     std::ifstream in(path);
 
-    if (!in)
-        throw std::runtime_error("cannot open file");
+    if (!in) {
+        std::ofstream out(path);
+        return {};
+    }
 
     v_score out;
     std::string line;
@@ -116,7 +129,7 @@ millionaire::v_score millionaire::load_scores(const std::string& path)
             s.cash = std::stod(amt);
         }
         catch (...) {
-            s.cash = 0;
+            s.cash = 0.0;
         }
     }
 
