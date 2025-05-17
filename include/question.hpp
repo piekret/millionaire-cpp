@@ -2,6 +2,7 @@
 
 #include "config.hpp"
 #include <string>
+#include <vector>
 
 namespace millionaire {
 	
@@ -11,5 +12,7 @@ namespace millionaire {
 		char correct;
 		bool isCorrect(char a) const { return a == correct; };
 	};
+
+	typedef std::vector<Question> v_question;
 
 }

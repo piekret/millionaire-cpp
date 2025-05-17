@@ -17,8 +17,10 @@ namespace millionaire {
 		double cash;
 	};
 
+	typedef std::vector<Score> v_score;
+
 	Question parse_csv_row(const std::string& row);
-	std::vector<Question> load_questions(const std::string& path);
+	v_question load_questions(const std::string& path);
 
 	void print_green(const std::string& s);
 	void print_red(const std::string& s);
@@ -26,8 +28,8 @@ namespace millionaire {
 
 	CmdArgs parse_args(int argc, char** argv);
 
-	std::vector<Score> load_scores(const std::string& path);
-	void save_scores(const std::vector<Score>& scores, const std::string& path);
-	void sort_scores(std::vector<Score>& scores);
+	v_score load_scores(const std::string& path);
+	void save_scores(const v_score& scores, const std::string& path);
+	void sort_scores(v_score& scores);
 
 }	

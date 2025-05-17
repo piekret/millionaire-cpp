@@ -30,13 +30,13 @@ millionaire::Question millionaire::parse_csv_row(const std::string& row)
     return question;
 }
 
-std::vector<millionaire::Question> millionaire::load_questions(const std::string& path)
+millionaire::v_question millionaire::load_questions(const std::string& path)
 {
     std::ifstream in(path);
     if (!in) 
         throw std::runtime_error("Cannot open file");
 
-    std::vector<Question> out;
+    v_question out;
     std::string line;
     int level = 0;
 
@@ -88,14 +88,14 @@ millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
     return args;
 }
 
-std::vector<millionaire::Score> millionaire::load_scores(const std::string& path)
+millionaire::v_score millionaire::load_scores(const std::string& path)
 {
     std::ifstream in(path);
 
     if (!in)
         throw std::runtime_error("cannot open file");
 
-    std::vector<Score> out;
+    v_score out;
     std::string line;
     int level = 0;
 
@@ -123,7 +123,7 @@ std::vector<millionaire::Score> millionaire::load_scores(const std::string& path
     return out;
 }
 
-void millionaire::save_scores(const std::vector<Score>& scores, const std::string& path)
+void millionaire::save_scores(const v_score& scores, const std::string& path)
 {
     std::ofstream out(path);
 
@@ -131,7 +131,7 @@ void millionaire::save_scores(const std::vector<Score>& scores, const std::strin
         out << s.nick << ";" << s.cash << "\n";
 }
 
-void millionaire::sort_scores(std::vector<Score>& scores)
+void millionaire::sort_scores(v_score& scores)
 {
     bool swapped;
     int n = scores.size();
