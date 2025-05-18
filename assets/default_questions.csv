@@ -1,15 +1,125 @@
-"What is the capital of Poland?";"Warsaw";"Krakow";"Gdansk";"Wroclaw";A
-"Which planet is known as the Red Planet?";"Earth";"Mars";"Jupiter";"Saturn";B
-"Who wrote 'Hamlet'?";"Charles Dickens";"William Shakespeare";"Mark Twain";"Leo Tolstoy";B
-"What is the largest ocean on Earth?";"Atlantic";"Indian";"Arctic";"Pacific";D
-"Which element has the chemical symbol 'O'?";"Gold";"Oxygen";"Silver";"Iron";B
-"What is the square root of 64?";"6";"7";"8";"9";C
-"Who painted the Mona Lisa?";"Vincent van Gogh";"Leonardo da Vinci";"Pablo Picasso";"Michelangelo";B
-"What is the currency of Japan?";"Yuan";"Dollar";"Yen";"Won";C
-"Which year did World War II end?";"1942";"1945";"1948";"1950";B
-"What is the chemical formula for water?";"H2";"CO2";"H2O";"O2";C
-"How many continents are there?";"5";"6";"7";"8";C
-"Who discovered penicillin?";"Marie Curie";"Alexander Fleming";"Isaac Newton";"Albert Einstein";B
-"What is the tallest mountain in the world?";"K2";"Everest";"Kangchenjunga";"Lhotse";B
-"Which language is primarily spoken in Brazil?";"Spanish";"Portuguese";"French";"English";B
-"What is the hardest natural substance on Earth?";"Gold";"Iron";"Diamond";"Ruby";C
+﻿"What is the capital city of France?";"Berlin";"Madrid";"Paris";"Rome";C
+"Which river runs through Egypt and Sudan?";"Amazon";"Nile";"Yangtze";"Danube";B
+"What gas do plants absorb from the atmosphere?";"Oxygen";"Nitrogen";"Carbon dioxide";"Helium";C
+"Which planet is closest to the Sun?";"Venus";"Mercury";"Earth";"Mars";B
+"Who was the first President of the United States?";"George Washington";"Thomas Jefferson";"Abraham Lincoln";"John Adams";A
+"In which year did the Berlin Wall fall?";"1985";"1987";"1989";"1991";C
+"Who wrote 'Pride and Prejudice'?";"Jane Austen";"Charlotte Brontë";"Mary Shelley";"Emily Dickinson";A
+"The novel '1984' was written by which author?";"George Orwell";"Aldous Huxley";"Ray Bradbury";"Philip K. Dick";A
+"How many players are on the field for one soccer team?";"9";"10";"11";"12";C
+"Which country hosted the 2016 Summer Olympics?";"China";"Brazil";"United Kingdom";"Russia";B
+"What is the largest desert in the world?";"Gobi";"Sahara";"Arabian";"Kalahari";B
+"What element’s chemical symbol is 'Na'?";"Nitrogen";"Sodium";"Neon";"Nickel";B
+"Who composed the Four Seasons?";"Johann Sebastian Bach";"Antonio Vivaldi";"Wolfgang Amadeus Mozart";"Ludwig van Beethoven";B
+"Which ocean lies between Africa and Australia?";"Indian";"Pacific";"Atlantic";"Arctic";A
+"Which country gifted the Statue of Liberty to the USA?";"France";"United Kingdom";"Canada";"Germany";A
+"What is the hardest natural mineral?";"Topaz";"Quartz";"Diamond";"Sapphire";C
+"What is the Chinese New Year animal for 2024?";"Dragon";"Rabbit";"Snake";"Horse";A
+"Which city is known as the Big Apple?";"Los Angeles";"Chicago";"New York City";"Boston";C
+"How many teeth does a normal adult human have?";"28";"30";"32";"34";C
+"Who painted the ceiling of the Sistine Chapel?";"Raphael";"Michelangelo";"Caravaggio";"Donatello";B
+"What is the chemical formula of table salt?";"NaCl";"KCl";"CaCl2";"MgCl2";A
+"Which planet has the most moons (2025)?";"Jupiter";"Saturn";"Uranus";"Neptune";B
+"Who discovered gravity by observing a falling apple?";"Galileo Galilei";"Isaac Newton";"Albert Einstein";"Michael Faraday";B
+"What is the longest river in South America?";"Paraná";"Amazon";"Orinoco";"São Francisco";B
+"Which language has the most native speakers?";"English";"Spanish";"Mandarin Chinese";"Hindi";C
+"What is the boiling point of water at sea level (°C)?";"90";"95";"100";"105";C
+"Which continent is the least populated?";"Europe";"Australia";"Antarctica";"South America";C
+"Who wrote 'The Catcher in the Rye'?";"J.D. Salinger";"Ernest Hemingway";"F. Scott Fitzgerald";"John Steinbeck";A
+"Which instrument has 88 keys?";"Violin";"Harp";"Piano";"Accordion";C
+"Which gas makes up about 78% of Earth's atmosphere?";"Oxygen";"Carbon dioxide";"Nitrogen";"Argon";C
+"Who is known as the father of computers?";"Alan Turing";"Charles Babbage";"Tim Berners-Lee";"Steve Jobs";B
+"In which city were the 2008 Summer Olympics held?";"London";"Beijing";"Sydney";"Athens";B
+"What is the nearest star to Earth after the Sun?";"Proxima Centauri";"Sirius";"Betelgeuse";"Vega";A
+"Which blood type is known as the universal donor?";"A+";"O-";"AB+";"B-";B
+"Who wrote the play 'Romeo and Juliet'?";"Oscar Wilde";"William Shakespeare";"George Bernard Shaw";"Arthur Miller";B
+"What is the tallest animal on land?";"Elephant";"Giraffe";"Camel";"Rhino";B
+"Mount Kilimanjaro is located in which country?";"Kenya";"Tanzania";"Ethiopia";"Uganda";B
+"Which city hosted the first modern Olympics (1896)?";"Paris";"Athens";"London";"Rome";B
+"Who invented the telephone?";"Thomas Edison";"Alexander Graham Bell";"Nikola Tesla";"Guglielmo Marconi";B
+"What is the main ingredient of sushi rice seasoning?";"Soy sauce";"Rice vinegar";"Sesame oil";"Miso";B
+"What is H in the periodic table?";"Helium";"Hydrogen";"Holmium";"Hafnium";B
+"Which planet is famous for its rings?";"Mars";"Jupiter";"Uranus";"Saturn";D
+"Which currency is used in the United Kingdom?";"Euro";"Pound sterling";"Dollar";"Franc";B
+"Who wrote 'The Hobbit'?";"C.S. Lewis";"J.R.R. Tolkien";"Roald Dahl";"J.K. Rowling";B
+"What is the speed of light in vacuum (km/s rounded)?";"200,000";"250,000";"300,000";"350,000";C
+"Which vitamin is produced when skin is exposed to sunlight?";"Vitamin A";"Vitamin B12";"Vitamin C";"Vitamin D";D
+"In computing, what does CPU stand for?";"Central Processing Unit";"Computer Personal Unit";"Central Performance Utility";"Compute Power Unit";A
+"Which Italian city is famous for canals?";"Rome";"Venice";"Milan";"Florence";B
+"How many bones are in the adult human body?";"198";"206";"214";"240";B
+"What galaxy do we live in?";"Andromeda";"Sombrero";"Milky Way";"Whirlpool";C
+"Who invented the World Wide Web?";"Bill Gates";"Tim Berners-Lee";"Linus Torvalds";"Larry Page";B
+"Which art movement is Pablo Picasso associated with?";"Impressionism";"Cubism";"Surrealism";"Baroque";B
+"What is the capital of Canada?";"Toronto";"Vancouver";"Montreal";"Ottawa";D
+"Which sport uses a shuttlecock?";"Squash";"Badminton";"Table tennis";"Tennis";B
+"What is Earth's largest continent by area?";"Africa";"Asia";"North America";"Europe";B
+"Who composed 'Für Elise'?";"Chopin";"Beethoven";"Liszt";"Schubert";B
+"What is the process by which plants make food?";"Respiration";"Photosynthesis";"Transpiration";"Fermentation";B
+"In which country is the Taj Mahal located?";"India";"Pakistan";"Bangladesh";"Iran";A
+"Which instrument measures atmospheric pressure?";"Thermometer";"Barometer";"Hygrometer";"Anemometer";B
+"What is the currency of Switzerland?";"Euro";"Franc";"Krone";"Pound";B
+"Who painted 'Starry Night'?";"Claude Monet";"Vincent van Gogh";"Paul Cézanne";"Henri Matisse";B
+"Which is the smallest prime number?";"0";"1";"2";"3";C
+"What is the name of the longest bone in the human body?";"Humerus";"Femur";"Tibia";"Fibula";B
+"Which natural satellite orbits Earth?";"Phobos";"Europa";"The Moon";"Titan";C
+"What is the powerhouse of the cell?";"Nucleus";"Ribosome";"Mitochondrion";"Golgi apparatus";C
+"How many squares are on a standard chessboard?";"32";"56";"64";"72";C
+"Which city is home to the Colosseum?";"Athens";"Rome";"Istanbul";"Barcelona";B
+"Which gas is most abundant in the Sun?";"Hydrogen";"Helium";"Carbon";"Oxygen";A
+"What is the freezing point of water in Fahrenheit?";"32";"0";"212";"100";A
+"Who is the author of 'Moby-Dick'?";"Herman Melville";"Mark Twain";"Nathaniel Hawthorne";"Edgar Allan Poe";A
+"Which African nation has Cairo as its capital?";"Nigeria";"Egypt";"Kenya";"Ghana";B
+"What does DNA stand for?";"Deoxyribonucleic Acid";"Dinucleic Acid";"Deoxyribose Acid";"Ribonucleic Acid";A
+"Which river flows through Paris?";"Thames";"Rhine";"Seine";"Danube";C
+"Who discovered electricity with a kite experiment?";"Benjamin Franklin";"Thomas Edison";"Michael Faraday";"Nikola Tesla";A
+"What is the main language of Argentina?";"Spanish";"Portuguese";"Italian";"English";A
+"Which country has the maple leaf on its flag?";"Australia";"Canada";"Denmark";"Norway";B
+"Who wrote 'To Kill a Mockingbird'?";"Harper Lee";"Toni Morrison";"Stephen King";"John Grisham";A
+"What is the capital of South Korea?";"Busan";"Seoul";"Incheon";"Daegu";B
+"Which continent is known as the Dark Continent historically?";"Asia";"Africa";"Europe";"Australia";B
+"Which gas do humans exhale?";"Oxygen";"Hydrogen";"Carbon dioxide";"Nitrogen";C
+"What is 9 × 9?";"80";"81";"88";"90";B
+"Which planet is known for its Great Red Spot?";"Mars";"Jupiter";"Saturn";"Neptune";B
+"Who is the Greek god of the sea?";"Zeus";"Ares";"Hermes";"Poseidon";D
+"Which instrument is used to see tiny objects not visible to the naked eye?";"Telescope";"Periscope";"Microscope";"Oscilloscope";C
+"In which US state is the Grand Canyon located?";"California";"Nevada";"Arizona";"Utah";C
+"Which month has an extra day in a leap year?";"January";"February";"March";"April";B
+"What is the primary metal in brass?";"Aluminum";"Copper";"Iron";"Lead";B
+"Which animal is known as the King of the Jungle?";"Tiger";"Lion";"Elephant";"Leopard";B
+"Who developed the theory of relativity?";"Niels Bohr";"Albert Einstein";"Max Planck";"Stephen Hawking";B
+"Which country is famous for the Eiffel Tower?";"Italy";"France";"Spain";"Germany";B
+"What is the capital city of Australia?";"Sydney";"Melbourne";"Canberra";"Perth";C
+"What is the basic unit of life?";"Atom";"Molecule";"Cell";"Organ";C
+"Which metal is liquid at room temperature?";"Mercury";"Sodium";"Copper";"Zinc";A
+"What is the highest waterfall in the world?";"Niagara Falls";"Angel Falls";"Victoria Falls";"Iguazu Falls";B
+"What is the capital of Norway?";"Oslo";"Stockholm";"Copenhagen";"Helsinki";A
+"Who wrote 'Crime and Punishment'?";"Leo Tolstoy";"Fyodor Dostoevsky";"Anton Chekhov";"Ivan Turgenev";B
+"Which instrument measures earthquakes?";"Seismograph";"Gyroscope";"Barometer";"Anemometer";A
+"Which US president issued the Emancipation Proclamation?";"George Washington";"Abraham Lincoln";"Theodore Roosevelt";"Franklin D. Roosevelt";B
+"What is the capital of Spain?";"Seville";"Barcelona";"Madrid";"Valencia";C
+"What part of the plant conducts photosynthesis?";"Root";"Stem";"Leaf";"Flower";C
+"Which element has the symbol 'Au'?";"Silver";"Gold";"Aluminum";"Uranium";B
+"What is the largest planet in our solar system?";"Earth";"Mars";"Jupiter";"Saturn";C
+"What is the main gas found in the air we breathe?";"Carbon dioxide";"Oxygen";"Nitrogen";"Hydrogen";C
+"Which scientist proposed three laws of motion?";"Isaac Newton";"Galileo Galilei";"Johannes Kepler";"Blaise Pascal";A
+"Which city hosted the 2022 FIFA World Cup final?";"Doha";"Lusail";"Al Wakrah";"Al Khor";B
+"What is the tallest building in the world (2025)?";"Shanghai Tower";"Burj Khalifa";"One World Trade Center";"Taipei 101";B
+"Which planet is tilted on its side by about 98°?";"Neptune";"Uranus";"Saturn";"Pluto";B
+"Who developed the polio vaccine in the 1950s?";"Louis Pasteur";"Edward Jenner";"Jonas Salk";"Robert Koch";C
+"Which chess piece can only move diagonally?";"Rook";"Bishop";"Knight";"Queen";B
+"Which country has the most volcanoes?";"United States";"Indonesia";"Japan";"Russia";B
+"What does HTTP stand for?";"HyperText Transfer Protocol";"High-Tech Transmission Process";"Hyper Terminal Trace Program";"Host Transfer Text Protocol";A
+"In which organ of the human body would you find the hippocampus?";"Heart";"Brain";"Liver";"Kidney";B
+"Which planet has day length almost equal to its year?";"Mercury";"Venus";"Mars";"Pluto";B
+"Which desert covers much of northern Africa?";"Kalahari";"Patagonian";"Sahara";"Gobi";C
+"Who is the author of 'Frankenstein'?";"Mary Shelley";"Bram Stoker";"H.G. Wells";"Edgar Allan Poe";A
+"What is 1000 years called?";"Century";"Decade";"Millennium";"Epoch";C
+"Which European city has the landmark Sagrada Família?";"Lisbon";"Barcelona";"Rome";"Prague";B
+"What is the national flower of Japan?";"Rose";"Tulip";"Cherry blossom";"Lotus";C
+"Which physicist is famous for E=mc²?";"Albert Einstein";"Niels Bohr";"Enrico Fermi";"Richard Feynman";A
+"Which blood cells help in clotting of blood?";"Red blood cells";"White blood cells";"Platelets";"Plasma";C
+"Who painted 'The Persistence of Memory'?";"Salvador Dalí";"Pablo Picasso";"Joan Miró";"Henri Rousseau";A
+"What is the study of fossils called?";"Ecology";"Paleontology";"Geology";"Archaeology";B
+"Which layer protects Earth from UV radiation?";"Troposphere";"Ozone layer";"Ionosphere";"Exosphere";B
+"Which mountain range separates Europe and Asia in Russia?";"Alps";"Carpathians";"Urals";"Caucasus";C
+"Which author created Sherlock Holmes?";"Agatha Christie";"Arthur Conan Doyle";"Edgar Allan Poe";"Wilkie Collins";B

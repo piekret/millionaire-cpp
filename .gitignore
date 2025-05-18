@@ -18,7 +18,9 @@ compile_commands.json
 *.log
 *.dmp
 
+scores.csv
 *.scores
+last.csv
 
 .DS_Store
 Thumbs.db

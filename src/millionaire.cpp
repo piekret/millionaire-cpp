@@ -11,6 +11,10 @@ int main(int argc, char** argv)
 
 	try {
 		CmdArgs args = parse_args(argc, argv);
+
+		if (args.play_last)
+			args.questions_path = last_round_file;
+
 		v_question questions = load_questions(args.questions_path);
 		Game game(std::move(questions), args);
 

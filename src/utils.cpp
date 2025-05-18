@@ -61,11 +61,6 @@ void millionaire::print_red(const std::string& s)
     std::cout << "\x1B[31m" << s << "\x1B[0m" << "\n";
 }
 
-void millionaire::clear()
-{
-    std::cout << "\x1B[2J\x1B[H" << "\n";
-}
-
 void millionaire::print_banner()
 {
     std::ifstream in(banner_file);
@@ -80,7 +75,7 @@ void millionaire::print_banner()
 millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
 {
     CmdArgs args;
-    args.shuffle = true;
+    args.play_last = false;
     args.nick = "player";
     args.help = false;
 
@@ -91,8 +86,8 @@ millionaire::CmdArgs millionaire::parse_args(int argc, char** argv)
             args.help = true;
         else if (a.find("-questions=") == 0)
             args.questions_path = a.substr(11);
-        else if (a == "-shuffle=false")
-            args.shuffle = false;
+        else if (a == "-last")
+            args.play_last = true;
         else if (a.find("-nick=") == 0)
             args.nick = a.substr(6);
     }
@@ -134,6 +129,8 @@ millionaire::v_score millionaire::load_scores(const std::string& path)
         catch (...) {
             s.cash = 0.0;
         }
+
+        out.push_back(s);
     }
 
     return out;
@@ -155,7 +152,7 @@ void millionaire::sort_scores(v_score& scores)
     do {
         swapped = false;
         
-        for (int i = 1; i < n; i++) {
+        for (size_t i = 1; i < n; i++) {
             if (scores[i - 1].cash < scores[i].cash) {
                 std::swap(scores[i - 1], scores[i]);
                 swapped = true;
@@ -164,4 +161,19 @@ void millionaire::sort_scores(v_score& scores)
 
         n--;
     } while (swapped);
+}
+
+void millionaire::save_last(const v_question& questions, const std::string& path)  
+{  
+   std::ofstream out(path);  
+   
+   for (const Question& q : questions) {
+       out << q.text << ';'  
+           << q.answers[0] << ';'  
+           << q.answers[1] << ';'  
+           << q.answers[2] << ';'  
+           << q.answers[3] << ';'  
+           << q.correct  
+           << '\n';
+   }  
 }

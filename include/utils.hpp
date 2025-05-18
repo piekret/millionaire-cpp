@@ -8,9 +8,9 @@ namespace millionaire {
 
 	struct CmdArgs {
 		std::string questions_path;
-		bool shuffle;
 		std::string nick;
 		bool help;
+		bool play_last;
 	};
 
 	struct Score {
@@ -25,7 +25,6 @@ namespace millionaire {
 
 	void print_green(const std::string& s);
 	void print_red(const std::string& s);
-	void clear();
 	void print_banner();
 
 	CmdArgs parse_args(int argc, char** argv);
@@ -33,5 +32,7 @@ namespace millionaire {
 	v_score load_scores(const std::string& path);
 	void save_scores(const v_score& scores, const std::string& path);
 	void sort_scores(v_score& scores);
+
+	void save_last(const v_question& questions, const std::string& path);
 
 }	

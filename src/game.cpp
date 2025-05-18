@@ -10,31 +10,33 @@ Usage:
   millionaire [options]
 
 Options:
-  -help               Show this help message and exit.
-  -questions=<file>   Path to the questions file.
-                      Default: "default_questions".
-  -shuffle=false      Do not shuffle questions (shuffling is ON by default).
-  -nick=<name>        Set the player's nickname (default: "player").
+  -help                Show this help message and exit.
+  -questions=<file>    Path to the questions file
+                       (default: "default_questions").
+  -nick=<name>         Set the player's nickname (default: "player").
+  -last                Replay the most recent unfinished round.
 
 Examples:
-  millionaire -questions=trivia.txt -nick=Alice
-  millionaire -shuffle=false
+  millionaire -questions=myquiz.csv -nick=Sigma
+  millionaire -last
 )";
 
 
 millionaire::Game::Game(v_question questions, const CmdArgs& args) 
 	: questions(questions), args(args)
 {
-	if (args.shuffle) {
+	if (!args.play_last) {
 		std::random_device seed;
 		std::mt19937 gen(seed());
 		std::shuffle(this->questions.begin(), this->questions.end(), gen);
 	}
+	
+	this->questions.resize(std::min<size_t>(15, this->questions.size()));
 }
 
 void millionaire::Game::show_scores(double reward)
 {
-	v_score scores = load_scores(args.questions_path + ".scores");
+	v_score scores = load_scores(scores_file);
 	scores.push_back({ args.nick, reward });
 
 	sort_scores(scores);
@@ -42,11 +44,13 @@ void millionaire::Game::show_scores(double reward)
 	if (scores.size() > 10)
 		scores.resize(10);
 
-	save_scores(scores, args.questions_path + ".scores");
+	save_scores(scores, scores_file);
 
 	std::cout << "\nHigh Scores:" << "\n";
 	for (int i = 0; i < scores.size(); i++)
 		std::cout << (i + 1) << ". " << scores[i].nick << " - $" << scores[i].cash << "\n";
+
+	std::cout << "\n";
 }
 
 void millionaire::Game::run()
@@ -55,6 +59,8 @@ void millionaire::Game::run()
 		std::cout << man << "\n";
 		return;
 	}
+
+	save_last(questions, last_round_file);
 
 	print_banner();
 	std::cout << "Commands: A-D answer, H=50/50, U=Audience, P=Phone, Q=Exit\n";
