@@ -6,11 +6,11 @@
 
 namespace millionaire {
 	
-	typedef std::string answers[4];
+	typedef std::string Answers[4];
 
 	struct Question {
 		std::string text;
-		answers answers;
+		Answers answers;
 		char correct;
 		bool isCorrect(char a) const { return a == correct; };
 	};

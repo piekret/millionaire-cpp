@@ -37,7 +37,7 @@ Wymagany jest kompilator zgodny z C++17.
 Przykład:
 
 ```bash
-./millionaire -questions=historia.csv -nick=Asia
+./millionaire -questions="pyta.csv" -nick=JohnPork
 ```
 
 ---
