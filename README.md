@@ -1,41 +1,38 @@
-# 💰 Millionaire – gra terminalowa
+# Millionaire – quiz terminalowy
 
-Prosty quiz w stylu *Milionerów*: 15 pytań, trzy koła ratunkowe, tablica rekordów.
-
----
-
-## ⚙️ Kompilacja
+## Kompilacja
 
 ```bash
 # GCC / Clang
 mkdir build && cd build
 g++ -std=c++17 -O2 ../src/*.cpp -o millionaire
 
-# MSVC (w wierszu polecenia "Developer")
+# MSVC
 cl /std:c++17 /O2 /EHsc ..\src\*.cpp /Fe:millionaire.exe
 ```
 
-# ALBO
+## ALBO
+
 ```bash
-Odpalasz projekt w VS / VS Code i klikasz Build
+Odpalasz w VS / VS Code i klikasz Build
 ```
 
-Wymagany jest kompilator C++17 lub nowszy (używamy `<filesystem>`).
+Wymagany jest kompilator zgodny z C++17.
 
 ---
 
-## 🚀 Uruchamianie
+## Uruchamianie
 
 ```bash
 ./millionaire [opcje]
 ```
 
-| Opcja               | Opis                                                            |
-| ------------------- | --------------------------------------------------------------- |
-| `-help`             | Pokaż pomoc i zakończ.                                          |
-| `-questions=<plik>` | Wczytaj własny plik CSV z pytaniami.                            |
-| `-nick=<nazwa>`     | Ustaw nick gracza (domyślnie `player`).                         |
-| `-last`             | Kontynuuj ostatnio przerwaną rundę (z pliku `assets/last.csv`). |
+| Opcja               | Działanie                                 |
+| ------------------- | ----------------------------------------- |
+| `-help`             | Wyświetla pomoc                           |
+| `-questions=<plik>` | Ładuje pytania z pliku CSV                |
+| `-nick=<nazwa>`     | Ustawia nazwę gracza (domyślnie `player`) |
+| `-last`             | Kontynuuje ostatnią niedokończoną grę     |
 
 Przykład:
 
@@ -45,42 +42,25 @@ Przykład:
 
 ---
 
-## 🕹️ Sterowanie
+## Sterowanie
 
-| Klawisz | Działanie                             |
-| ------- | ------------------------------------- |
-| `A–D`   | Wybór odpowiedzi                      |
-| `H`     | 50/50                                 |
-| `U`     | Pytanie do publiczności               |
-| `P`     | Telefon do przyjaciela                |
-| `Q`     | Zakończ i wypłać gwarantowaną wygraną |
-
----
-
-## 📄 Format pytań (CSV)
-
-```
-"Pytanie";"Odp A";"Odp B";"Odp C";"Odp D";<litera poprawnej>
-```
-
-Przykład:
-
-```
-"Stolica Polski?";"Warszawa";"Kraków";"Gdańsk";"Wrocław";A
-```
-
-Plik **musi** być zapisany w UTF‑8.
+| Klawisz | Funkcja                                       |
+| ------- | --------------------------------------------- |
+| `A–D`   | Wybór odpowiedzi                              |
+| `H`     | Koło 50/50                                    |
+| `U`     | Pytanie do publiczności                       |
+| `P`     | Telefon do przyjaciela                        |
+| `Q`     | Zakończenie gry z wypłatą gwarantowanej kwoty |
 
 ---
 
-## 📂 Struktura katalogów
+## Format pliku pytań (CSV)
 
 ```
-assets/
- ├─ default_questions.csv   # domyślne pytania
- ├─ scores.csv              # top‑10 wyników
- ├─ last.csv                # automatyczny zapis niedokończonej gry
- └─ logo.txt                # baner ASCII
+"Pytanie";"Odp A";"Odp B";"Odp C";"Odp D";<poprawna litera>
 ```
 
----
+
+Plik powinien być zapisany w kodowaniu UTF‑8.
+
+
